@@ -1,4 +1,13 @@
 package io.hatari.client.java.exceptions;
 
-public class InvalidProjectException {
+/**
+ * InvalidProjectException
+ *
+ * @author Ebot Tabi
+ * @since 1.0.0
+ */
+public class InvalidProjectException extends HatariException{
+    InvalidProjectException(String detailMessage) {
+        super(detailMessage);
+    }
 }
