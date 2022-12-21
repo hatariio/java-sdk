@@ -52,7 +52,7 @@ public class HatariHttpRequestRunnable implements Runnable {
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("POST");
         connection.setRequestProperty("Accept", "application/json");
-        connection.setRequestProperty("Authorization", hatariClient.getApiKey());
+        connection.setRequestProperty("Authorization", String.format("%s", hatariClient.getApiKey()));
         connection.setRequestProperty("Content-Type", "application/json");
         // we're writing
         connection.setDoOutput(true);
