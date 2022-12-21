@@ -30,7 +30,7 @@ public class HatariHttpRequestRunnable implements Runnable {
     @Override
     public void run() {
         try {
-            HttpURLConnection connection = sendEvent(this.projectKey, this.event);
+            HttpURLConnection connection = sendEvent(this.event);
             handleResult(connection.getInputStream(), connection.getResponseCode(), callback);
         } catch (IOException e) {
             HatariLogging.log("There was an error while sending events to the Keen API.");
@@ -42,10 +42,10 @@ public class HatariHttpRequestRunnable implements Runnable {
         }
     }
 
-    HttpURLConnection sendEvent(String eventCollection, Map<String, Object> event) throws IOException {
+    HttpURLConnection sendEvent(Map<String, Object> event) throws IOException {
         // just using basic JDK HTTP library
-        String urlString = String.format("%s/%s/projects/%s/events/%s", HatariConstants.SERVER_ADDRESS,
-                HatariConstants.API_VERSION, hatariClient.getProjectKey(), eventCollection);
+        String urlString = String.format("%s/%s/events/%s", HatariConstants.SERVER_ADDRESS,
+                HatariConstants.API_VERSION, hatariClient.getProjectKey());
         URL url = new URL(urlString);
 
         // set up the POST
