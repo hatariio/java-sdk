@@ -30,7 +30,6 @@ import java.util.concurrent.Executors;
  *     Map<String, Object> myEvent = new HashMap<String, Object>();
  *     myEvent.put("property name", "property value");
  *     HatariClient.client().addEvent("transactions", myEvent);
- *     HatariClient.client().upload(null);
  * </pre>
  *
  * @author Ebot Tabi
