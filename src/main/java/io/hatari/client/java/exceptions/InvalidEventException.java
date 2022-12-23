@@ -7,7 +7,7 @@ package io.hatari.client.java.exceptions;
  * @since 1.0.0
  */
 public class InvalidEventException extends HatariException{
-    InvalidEventException(String detailMessage) {
+    public InvalidEventException(String detailMessage) {
         super(detailMessage);
     }
 }

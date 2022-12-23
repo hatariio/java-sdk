@@ -7,7 +7,7 @@ package io.hatari.client.java.exceptions;
  * @since 1.0.0
  */
 public class InvalidProjectException extends HatariException{
-    InvalidProjectException(String detailMessage) {
+    public InvalidProjectException(String detailMessage) {
         super(detailMessage);
     }
 }
